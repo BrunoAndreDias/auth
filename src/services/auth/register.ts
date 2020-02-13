@@ -1,8 +1,8 @@
 import * as argon2 from 'argon2'
-import {generateToken} from '../auth/generate-token'
+import {generateToken} from './generate-token'
 import {UserToken, UserModel, User} from '../../models/user'
 
-export async function createUser(user: User): Promise<UserToken> {
+export async function register(user: User): Promise<UserToken> {
   try {
     const passwordHashed = await argon2.hash(user.password)
 
