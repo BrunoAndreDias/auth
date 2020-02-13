@@ -1,12 +1,12 @@
 import cors from 'cors'
 import express from 'express'
-import routes from './api'
+import routes from './routes'
+import {MONGODB_URI, PORT, SESSION_SECRET} from './config'
 import mongoose from 'mongoose'
 import bluebird from 'bluebird'
 import bodyParser from 'body-parser'
 import session from 'express-session'
 import mongo from 'connect-mongo'
-import {MONGODB_URI, SESSION_SECRET} from './util/secrets'
 
 const MongoStore = mongo(session)
 
@@ -33,7 +33,7 @@ mongoose
 //express config
 const app = express()
 
-app.set('port', process.env.PORT || 3000)
+app.set('port', PORT || 3000)
 app.use(bodyParser.json())
 app.use(
   session({

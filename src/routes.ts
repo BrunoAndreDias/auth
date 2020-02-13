@@ -1,10 +1,10 @@
-import {Router} from 'express'
-import HeartBeatApi from './controllers/heart-beat'
+import { Router } from 'express'
+import UserApi from './controllers/user'
 
 export const initialize = (): Router => {
   const api = Router()
 
-  api.use(HeartBeatApi)
+  api.use(UserApi)
 
   return api
 }
