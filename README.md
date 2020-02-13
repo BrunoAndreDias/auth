@@ -1,1 +1,1 @@
-# express-api-setup
+# Typescript auth
