@@ -1,10 +1,20 @@
 import {Schema, model, Document} from 'mongoose'
 
-export type UserDocument = Document & {
+export type User = Document & {
   name: string
   email: string
   password: string
   role: string
+}
+
+export type UserLogin = {
+  email: string
+  password: string
+}
+
+export type UserToken = {
+  user: User
+  token: string
 }
 
 const UserSchema = new Schema(
@@ -29,4 +39,4 @@ const UserSchema = new Schema(
   {timestamps: true},
 )
 
-export const User = model<UserDocument>('User', UserSchema)
+export const UserModel = model<User>('User', UserSchema)

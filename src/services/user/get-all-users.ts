@@ -1,5 +1,5 @@
-import {User, UserDocument} from '../../models/user'
+import {UserModel, User} from '../../models/user'
 
-export async function getAllUsers(): Promise<Array<UserDocument>> {
-  return User.find()
+export async function getAllUsers(): Promise<Array<User>> {
+  return UserModel.find()
 }

@@ -11,8 +11,8 @@ function UserRouter(): Router {
       res.send(users)
     })
     .post(async (req: Request, res: Response) => {
-      const user = await createUser(req.body)
-      res.send(user)
+      const userMailWithToken = await createUser(req.body)
+      res.send(userMailWithToken)
     })
 
   return router

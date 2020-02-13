@@ -5,10 +5,10 @@ if (fs.existsSync('.env')) {
   dotenv.config({path: '.env'})
 }
 
-const {SESSION_SECRET, PORT, MONGODB_URI} = process.env
+const {JWT_SECRET, PORT, MONGODB_URI} = process.env
 
-if (!SESSION_SECRET) {
-  console.log('SESSION_SECRET dont exist')
+if (!JWT_SECRET) {
+  console.log('JWT_SECRET dont exist')
   process.exit(1)
 }
 
@@ -22,4 +22,4 @@ if (!MONGODB_URI) {
   process.exit(1)
 }
 
-export {SESSION_SECRET, PORT, MONGODB_URI}
+export {JWT_SECRET, PORT, MONGODB_URI}
